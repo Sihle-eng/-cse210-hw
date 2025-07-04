@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 class Program
@@ -8,12 +9,11 @@ class Program
         Console.WriteLine("Enter a list of numbers, type 0 when finished.");
         int number;
         List <int> numbers = new List <int> ();
-        int total = 0;
+        float total = 0;
         int len;
-        int real;
-        int average;
-        int great = 0;
-
+        float real;
+        float average;
+        
         do 
         {
             Console.Write("Enter number: ");
@@ -28,6 +28,16 @@ class Program
         real = len - 1;
         average = total / real;
         Console.WriteLine($"The average is {average}");
+
+        int high = numbers[0];
         
+        foreach (int num in numbers)
+        {
+            if (num > high)
+            {
+                high = num;
+            }
+        }
+        Console.WriteLine($"The max is {high}");
     }
 }
