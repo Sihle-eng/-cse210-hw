@@ -21,10 +21,10 @@ class Program
 
         // Product product3 = new Product(10.99, 5);
         product1.DisplayProduct();
+        Console.WriteLine(order1.GetPackagingLabel());
+        Console.WriteLine(order1.GetShippingLabel());
+        Console.WriteLine($"Net Total: {order1.CalculateTotalCost()}");
         Console.WriteLine($"Total cost: {product2.GetTotal()}");
-
-
-
 
 
     }

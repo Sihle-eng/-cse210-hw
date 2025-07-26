@@ -29,23 +29,23 @@ public class Order
         {
             total += product.GetTotal();
         }
-        string country = _customer.Count > 0 ? _customer[0].GetCountry(): "Unknwon";
-        total += country == "USA" ? 5: 35;
+        string country = _customer.Count > 0 ? _customer[0].GetCountry() : "Unknwon";
+        total += country == "USA" ? 5 : 35;
 
         return total;
     }
-    public void  GetShippingLabel()
+    public string GetShippingLabel()
     {
-        foreach (var cust in _customer)
-        {
-            Console.WriteLine($"{cust} {cust.Address}");     
-        }
+        return $"{_customer[0].Name}: {_customer[0].Address}";
     }
-    public void GetPackagingLabel()
+
+    public string GetPackagingLabel()
     {
-        foreach (var prod in _product)
+        string label = "";
+        foreach (Product product in _product)
         {
-            Console.WriteLine($"Product: {prod} - Price: {prod}");
+            label += product.ToString() + "\n"; 
         }
+        return label;
     }
 }
