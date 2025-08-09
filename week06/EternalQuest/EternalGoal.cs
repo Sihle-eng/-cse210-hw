@@ -2,9 +2,16 @@ using System;
 
 public class EternalGoal : Goal
 {
-    public override void RecordEvent()
+
+    public EternalGoal(string name, string description, int points) : base(name, description, points)
     {
 
+    }
+    public override void RecordEvent()
+    {
+        int _timesRecorded = 0;
+        _timesRecorded++;
+        Console.WriteLine(_points);
     }
     public override bool IsComplete()
     {
@@ -12,6 +19,10 @@ public class EternalGoal : Goal
     }
     public override string GetStringRepresentation()
     {
-        return "Etre";
+        return $"EternalGoal|{GetDetailsString()}";
+    }
+    public override int GetPoints()
+    {
+        return _points; 
     }
 }

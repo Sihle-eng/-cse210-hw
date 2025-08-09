@@ -1,0 +1,6 @@
+Score | 0
+SimpleGoal|me  |  being me  |3
+
+
+ChecklistGoal|me | being me | 3| 0 |3|2 
+
